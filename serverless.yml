@@ -15,9 +15,8 @@ provider:
   memorySize: 128
   timeout: 10
   environment:
-    LOGGING_LEVEL: ${self:custom.env}.LOGGING_LEVEL, 'error'}
-    DATABASE_URL: ${self:custom.env}.DATABASE_URL, ''}
-    DATABASE_SSL: ${self:custom.env}.DATABASE_SSL, 'true'}
+    NODE_ENV: ${self:custom.env.NODE_ENV, 'development'}
+    LOGGING_LEVEL: ${self:custom.env.LOGGING_LEVEL, 'info'}
 
 functions:
   sms-get:
@@ -50,7 +49,7 @@ plugins:
 custom:
   serverless-offline:
     port: 5000
-  env: ${file(./serverless.env.yml):${self:provider.stage}
+  env: ${file(./config/${self:provider.stage}.env.json)}
 
 package:
   exclude: # Specify the directories and files which should be excluded in the deployment package for this specific function.

@@ -1,6 +1,6 @@
 'use strict';
 
-//const logger = require("../utils/logging");
+const logger = require("../utils/logging");
 
 class SMS {
     constructor() {
@@ -8,7 +8,7 @@ class SMS {
     }
 
     get() {
-		//logger.debug("services/sms.get");
+		logger.debug("services/sms.get");
 		return {
        		smsId: "3423dhsduh3234"
     	};

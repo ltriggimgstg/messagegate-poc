@@ -1,10 +1,10 @@
 'use strict';
 
-//const logger = require("../utils/logging");
+const logger = require("../utils/logging");
 
 module.exports = {
 	responder: (data) => {
-        //logger.debug("handler/base.responder", data);
+        logger.debug("handler/base.responder", data);
 		return {
 			error: null, 
 			response: {

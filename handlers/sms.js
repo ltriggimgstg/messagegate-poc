@@ -1,12 +1,12 @@
 'use strict';
 
-//const logger = require("../utils/logging");
+const logger = require("../utils/logging");
 const SMS = require("../services/sms");
 const baseHandler = require("./base");
 
 module.exports = {
 	get: (evt, ctx, cb) => {
-		//logger.debug("handler/sms.get");
+		logger.debug("handler/sms.get");
 		return new Promise((resolve, reject) => {
             resolve(new SMS().get());
         })
@@ -15,7 +15,7 @@ module.exports = {
 		.catch(err => cb(err));
 	},
 	post: (evt, ctx, cb) => {
-		//logger.debug("handler/sms.post");
+		logger.debug("handler/sms.post");
 		return new Promise((resolve, reject) => {
             resolve(new SMS().get());
         })
