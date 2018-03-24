@@ -1,0 +1,23 @@
+{
+  "name": "messagegate-poc",
+  "version": "1.0.0",
+  "description": "POC for PalCare MessageGate",
+  "author": "Lloyd Trigg",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "^2.4.1"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3",
+    "serverless-offline": "^3.18.0"
+  },
+  "scripts": {
+    "local": "serverless offline start --stage local",
+    "dev": "serverless offline start --stage dev",
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["json", "lcov", "html", "text"]
+  }
+}
