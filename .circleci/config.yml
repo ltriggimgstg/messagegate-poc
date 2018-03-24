@@ -5,4 +5,22 @@ jobs:
        - image: circleci/node:6.10
      steps:
        - checkout
-       - run: echo "hello world"
+       # Download and cache dependencies
+       - restore_cache:
+          keys:
+           - dependencies-cache-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+           - dependencies-cache
+       - run:
+          name: Install Serverless CLI and dependencies
+          command: |
+            sudo npm i -g serverless
+            npm install
+       # run tests
+       - run: 
+          name: Run tests with code coverage
+          command: npm test --coverage
+       - save_cache:
+          paths:
+           - node_modules
+          key: dependencies-cache-{{ checksum "package.json" }}
