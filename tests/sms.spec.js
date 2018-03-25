@@ -2,6 +2,7 @@
 
 const smsHandler = require('../handlers/sms');
 
+jest.setTimeout=20000;
 
 describe('GET /sms/{id}', () => {
     let evt = {};
