@@ -1,8 +1,8 @@
 const videoHandler = require('../handlers/video');
 
 describe('GET /video/{id}', () => {
-    var evt = {};
-    var ctx = {};
+    let evt = {};
+    let ctx = {};
     
     it('return statusCode 200', (done) => {
         let cb = (ctx, data) => {

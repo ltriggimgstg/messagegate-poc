@@ -1,10 +1,11 @@
-var winston = require('winston');
+const winston = require('winston');
+
 winston.emitErrs = true;
 
-var logger = new winston.Logger({
+const logger = new winston.Logger({
     transports: [
         new winston.transports.Console({
-            level: process.env.LOGGING_LEVEL || 'debug',
+            level: process.env.LOGGING_LEVEL,
             handleExceptions: true,
             json: false,
             colorize: true

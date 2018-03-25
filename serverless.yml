@@ -17,6 +17,8 @@ provider:
   environment:
     NODE_ENV: ${self:custom.env.NODE_ENV, 'development'}
     LOGGING_LEVEL: ${self:custom.env.LOGGING_LEVEL, 'info'}
+    DATABASE_URI: ${self:custom.env.DATABASE_URI}
+    DATABASE_SSL: ${self:custom.env.DATABASE_SSL}
 
 functions:
   sms-get:

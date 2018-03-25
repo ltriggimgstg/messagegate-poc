@@ -1,9 +1,11 @@
+'use strict';
+
 const smsHandler = require('../handlers/sms');
 
 
 describe('GET /sms/{id}', () => {
-    var evt = {};
-    var ctx = {};
+    let evt = {};
+    let ctx = {};
     
     it('return statusCode 200', (done) => {
         let cb = (ctx, data) => {
@@ -15,8 +17,8 @@ describe('GET /sms/{id}', () => {
 });
 
 describe('POST /sms/{id}', () => {
-    var evt = {};
-    var ctx = {};
+    let evt = {};
+    let ctx = {};
     
     it('return statusCode 200', (done) => {
         let cb = (ctx, data) => {
@@ -24,5 +26,6 @@ describe('POST /sms/{id}', () => {
             done();
         }
         smsHandler.post(evt, ctx, cb);
+        
     });
 });
