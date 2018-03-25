@@ -8,7 +8,7 @@ module.exports = {
 	get: (evt, ctx, cb) => {
 		logger.debug("handler/video.get");
 		return new Promise((resolve, reject) => {
-            resolve(new Sms(base.db).get())
+            resolve(new Sms().get())
         })
 		.then(data => base.responder(data))
 		.then(data => cb(data.error, data.response))
