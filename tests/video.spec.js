@@ -12,5 +12,5 @@ describe('GET /video/{id}', () => {
             done();
         }
         videoHandler.get(evt, ctx, cb);
-    });
+    }, 20000);
 });

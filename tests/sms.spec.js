@@ -2,8 +2,6 @@
 
 const smsHandler = require('../handlers/sms');
 
-jest.setTimeout=20000;
-
 describe('GET /sms/{id}', () => {
     let evt = {};
     let ctx = {};
@@ -15,7 +13,7 @@ describe('GET /sms/{id}', () => {
         }
         smsHandler.get(evt, ctx, cb);
     });
-});
+}, 20000);
 
 describe('POST /sms/{id}', () => {
     let evt = {};
@@ -28,5 +26,5 @@ describe('POST /sms/{id}', () => {
         }
         smsHandler.post(evt, ctx, cb);
         
-    });
+    }, 20000);
 });
