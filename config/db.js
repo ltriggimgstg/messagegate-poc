@@ -5,7 +5,7 @@ const { Pool } = require('pg');
 const dbPool = new Pool({
 	connectionString: process.env.DATABASE_URI,
 	ssl: ((process.env.DATABASE_SSL === 'true') || false),
-	connectionTimeoutMillis: 5000,
+	connectionTimeoutMillis: 8000,
 	idleTimeoutMillis: 10000,
 	max: 10
 });
