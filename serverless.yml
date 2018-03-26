@@ -13,7 +13,7 @@ provider:
   region: ap-southeast-2
   stage: ${opt:stage, 'dev'}
   memorySize: 128
-  timeout: 10
+  timeout: 30
   environment:
     NODE_ENV: ${self:custom.env.NODE_ENV, 'development'}
     LOGGING_LEVEL: ${self:custom.env.LOGGING_LEVEL, 'info'}
