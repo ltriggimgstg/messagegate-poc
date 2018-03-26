@@ -19,13 +19,6 @@
   },
   "jest": {
     "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "lcov",
-      "html",
-      "text"
-    ],
-    "coverageDirectory": "./tests/coverage",
     "forceExit": true
   }
 }
